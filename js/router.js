@@ -30,7 +30,7 @@ export class Router {
   }
 
   dispatch(route) {
-    fetch("/views/" + route.view)
+    fetch("views/" + route.view)
       .then((response) => {
         if (response.ok) {
           response.text().then((text) => {
