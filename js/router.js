@@ -7,12 +7,12 @@ export class Router {
 
   init() {
     window.addEventListener("hashchange", (e) => {
-      this.hasChanged();
+      this.hashChanged();
     });
-    this.hasChanged();
+    this.hashChanged();
   }
 
-  hasChanged() {
+  hashChanged() {
     try {
       for (const route of this.routes) {
         if (window.location.hash.length === 0 && route.default) {
