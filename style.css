@@ -1,0 +1,26 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+header{
+  width: 100%;
+  background-color: #eee;
+  padding: 20px 0;
+  margin-bottom: 20px;
+}
+
+header ul {
+  display: flex;
+  list-style: none;
+}
+header ul li {
+  margin-right: 10px;
+}
+
+.container{
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+}
