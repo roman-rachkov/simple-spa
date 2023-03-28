@@ -1,6 +1,5 @@
-import "./style.css";
-import Route from "./js/route.js";
-import { Router } from "./js/router.js";
+import Route from "./route.js";
+import { Router } from "./router.js";
 
 const routes = [];
 
