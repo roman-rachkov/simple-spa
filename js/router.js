@@ -33,18 +33,19 @@ export class Router {
     fetch("views/" + route.view)
       .then((response) => {
         if (response.ok) {
-          response.text().then((text) => {
-            const scripts = text.match(/<script>([\s\S]*?)<\/script>/gi);
-            this.root.innerHTML = text;
-            if (scripts) {
-              for (let script of scripts) {
-                script = script.replace(/<(\/)?script>/gi, "");
-                eval(script);
-              }
-            }
-          });
+          return response.text();
         } else {
           alert("Something wrong");
+        }
+      })
+      .then((text) => {
+        const scripts = text.match(/<script>([\s\S]*?)<\/script>/gi);
+        this.root.innerHTML = text;
+        if (scripts) {
+          for (let script of scripts) {
+            script = script.replace(/<(\/)?script>/gi, "");
+            eval(script);
+          }
         }
       })
       .catch((err) => console.log(err));
