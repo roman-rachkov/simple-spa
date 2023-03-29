@@ -1,10 +1,11 @@
 import makeComponent from "../core/component.js";
-import header from "../components/header";
+import layout from "../components/layout.jsx";
 export default makeComponent("index-page", () => {
   return `
-		${header}
-		<main class="container">
+		<layout-component>
+		<main slot="main" class="container">
 			<h1>Main</h1>
 		</main>
+		</layout-component>
 	`;
 });

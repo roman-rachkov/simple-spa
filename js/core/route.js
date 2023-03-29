@@ -9,6 +9,6 @@ export default class Route {
   }
 
   run() {
-    return `${this.component}`;
+    return `<${this.component}/>`;
   }
 }
