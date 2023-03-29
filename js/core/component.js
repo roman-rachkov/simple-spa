@@ -1,6 +1,7 @@
 import { Router } from "./router.js";
 
-const makeComponent = (name, callback) => {
+const makeComponent = (name, callback, classes = null) => {
+  console.log(classes);
   return (function (...args) {
     if (!customElements.get(name)) {
       customElements.define(
@@ -23,6 +24,8 @@ const makeComponent = (name, callback) => {
               this.slot,
               this.assignedSlot,
             ]);
+
+            // this.shadowRoot.adoptedStyleSheets = classes;
 
             this.shadowRoot.querySelectorAll("[spa-link]").forEach((link) => {
               if (!link.getAttribute("spa-link")) {
